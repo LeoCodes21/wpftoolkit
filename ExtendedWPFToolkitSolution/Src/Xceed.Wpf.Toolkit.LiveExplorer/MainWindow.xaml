@@ -20,6 +20,7 @@
         xmlns:samples="clr-namespace:Xceed.Wpf.Toolkit.LiveExplorer.Samples;assembly=Xceed.Wpf.Toolkit.LiveExplorer"
         xmlns:core="clr-namespace:Xceed.Wpf.Toolkit.LiveExplorer.Core"
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:toolkit="clr-namespace:Xceed.Wpf.Toolkit;assembly=Xceed.Wpf.Toolkit"
         AllowsTransparency="False"
         Icon="App.ico"
         Title="Toolkit Plus for WPF - LiveExplorer"
@@ -845,7 +846,7 @@
           </TabItem>
           <TabItem Header="XAML"
                    Style="{StaticResource TabItemStyle}">
-            <xctk:RichTextBox Text="{Binding View.XamlText, RelativeSource={RelativeSource AncestorType={x:Type Window}}}"
+            <toolkit:RichTextBox Text="{Binding View.XamlText, RelativeSource={RelativeSource AncestorType={x:Type Window}}}"
                               TextFormatter="{x:Static core:XamlFormatter.Instance}"
                               HorizontalAlignment="Stretch"
                               VerticalAlignment="Stretch"
@@ -857,7 +858,7 @@
           </TabItem>
           <TabItem Header="Code"
                    Style="{StaticResource TabItemStyle}">
-            <xctk:RichTextBox Text="{Binding View.CSharpText, RelativeSource={RelativeSource AncestorType={x:Type Window}}}"
+            <toolkit:RichTextBox Text="{Binding View.CSharpText, RelativeSource={RelativeSource AncestorType={x:Type Window}}}"
                               TextFormatter="{x:Static core:CSharpFormatter.Instance}"
                               HorizontalAlignment="Stretch"
                               VerticalAlignment="Stretch"

@@ -22,6 +22,7 @@
                  xmlns:conv="clr-namespace:Xceed.Wpf.Toolkit.LiveExplorer.Samples.Panels.Converters"
                  xmlns:s="clr-namespace:System;assembly=mscorlib"
                  xmlns:view="clr-namespace:Xceed.Wpf.Toolkit.LiveExplorer.Samples.Panels.Views"
+                 xmlns:toolkit="clr-namespace:Xceed.Wpf.Toolkit;assembly=Xceed.Wpf.Toolkit"
                  VerticalScrollBarVisibility="Disabled"
                  Title="SwitchPanel">
     <local:DemoView.Description>
@@ -158,11 +159,11 @@
          <TextBlock Grid.Row="0" Text="Usage:" Style="{StaticResource Header}" />
         <TextBlock Grid.Row="1" Text="Resize the window to see the layout animation." />
 
-        <xctk:SwitchPanel x:Name="_switchPanel" Grid.Row="2" ActiveLayoutIndex="{Binding ElementName=layoutCombo, Path=SelectedIndex}" ActiveLayoutChanged="OnSwitchPanelLayoutChanged">
-            <xctk:SwitchPanel.Layouts>
-               <xctk:WrapPanel x:Name="_wrapPanel" ItemWidth="100" ItemHeight="100"/>
-               <xctk:RandomPanel x:Name="_randomPanel" />
-            </xctk:SwitchPanel.Layouts>
+        <panels:SwitchPanel x:Name="_switchPanel" Grid.Row="2" ActiveLayoutIndex="{Binding ElementName=layoutCombo, Path=SelectedIndex}" ActiveLayoutChanged="OnSwitchPanelLayoutChanged">
+            <panels:SwitchPanel.Layouts>
+               <panels:WrapPanel x:Name="_wrapPanel" ItemWidth="100" ItemHeight="100"/>
+               <panels:RandomPanel x:Name="_randomPanel" />
+            </panels:SwitchPanel.Layouts>
             <TextBlock x:Name="_item1" Text="Item #1" Style="{StaticResource panelElement}"/>
             <TextBlock x:Name="_item2" Text="Item #2" Style="{StaticResource panelElement}"/>
             <TextBlock x:Name="_item3" Text="Item #3" Style="{StaticResource panelElement}"/>
@@ -171,7 +172,7 @@
             <TextBlock x:Name="_item6" Text="Item #6" Style="{StaticResource panelElement}"/>
             <TextBlock x:Name="_item7" Text="Item #7" Style="{StaticResource panelElement}"/>
             <TextBlock x:Name="_item8" Text="Item #8" Style="{StaticResource panelElement}"/>
-         </xctk:SwitchPanel>
+         </panels:SwitchPanel>
 
          <Image x:Name="_openSourceScreenShot" Grid.Row="2" Height="250" Visibility="Collapsed" />
          <TextBlock x:Name="_openSourceScreenShotDesc" Grid.Row="3" TextWrapping="Wrap" Visibility="Collapsed" />
@@ -225,7 +226,7 @@
                               VerticalAlignment="Center"
                               Margin="5"/>
                     <TextBlock Grid.Column="2" Text="Item Width:" VerticalAlignment="Center" Margin="10,0,0,0"/>
-                    <xctk:DoubleUpDown Grid.Column="3" 
+                    <toolkit:DoubleUpDown Grid.Column="3" 
                                        Value="{Binding ItemWidth, ElementName=_wrapPanel}"
                                        AllowInputSpecialValues="NaN"
                                        Width="100"
@@ -235,7 +236,7 @@
                                        VerticalAlignment="Center"
                                        Margin="5"/>
                     <TextBlock Grid.Column="2" Grid.Row="1" Text="Item Height:" VerticalAlignment="Center" Margin="10,0,0,0" />
-                    <xctk:DoubleUpDown Grid.Column="3" 
+                    <toolkit:DoubleUpDown Grid.Column="3" 
                                        Grid.Row="1"
                                        Value="{Binding ItemHeight, ElementName=_wrapPanel}" 
                                        AllowInputSpecialValues="NaN"
@@ -275,7 +276,7 @@
                     </Grid.RowDefinitions>
 
                     <TextBlock Text="Minimum Width:" VerticalAlignment="Center"/>
-                    <xctk:DoubleUpDown x:Name="_minimumWidth"
+                    <toolkit:DoubleUpDown x:Name="_minimumWidth"
                                        Grid.Column="1"
                                        Value="{Binding MinimumWidth, ElementName=_randomPanel, ValidatesOnExceptions=True}"
                                        AllowInputSpecialValues="None"
@@ -287,7 +288,7 @@
                                        VerticalAlignment="Center"
                                        Margin="5" />
                     <TextBlock Grid.Row="1" Text="Maximum Width:" VerticalAlignment="Center"/>
-                    <xctk:DoubleUpDown x:Name="_maximumWidth"
+                    <toolkit:DoubleUpDown x:Name="_maximumWidth"
                                        Grid.Column="1"
                                        Grid.Row="1"
                                        Value="{Binding MaximumWidth, ElementName=_randomPanel, ValidatesOnExceptions=True}"
@@ -300,7 +301,7 @@
                                        VerticalAlignment="Center"
                                        Margin="5" />
                     <TextBlock Grid.Column="2" Text="Minimum Height:" VerticalAlignment="Center" Margin="10,0,0,0"/>
-                    <xctk:DoubleUpDown x:Name="_minimumHeight"
+                    <toolkit:DoubleUpDown x:Name="_minimumHeight"
                                        Grid.Column="3" 
                                        Value="{Binding MinimumHeight, ElementName=_randomPanel, ValidatesOnExceptions=True}"
                                        AllowInputSpecialValues="None"
@@ -312,7 +313,7 @@
                                        VerticalAlignment="Center"
                                        Margin="5"/>
                     <TextBlock Grid.Column="2" Grid.Row="1" Text="Maximum Height:" VerticalAlignment="Center" Margin="10,0,0,0" />
-                    <xctk:DoubleUpDown x:Name="_maximumHeight"
+                    <toolkit:DoubleUpDown x:Name="_maximumHeight"
                                        Grid.Column="3" 
                                        Grid.Row="1"
                                        Value="{Binding MaximumHeight, ElementName=_randomPanel, ValidatesOnExceptions=True}" 

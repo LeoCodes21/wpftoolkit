@@ -21,6 +21,8 @@
                  xmlns:res="clr-namespace:Xceed.Wpf.Toolkit.LiveExplorer.Samples.Window.Resources"
                  xmlns:conv="clr-namespace:Xceed.Wpf.Toolkit.LiveExplorer.Samples.Window.Converters"
                  xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+                 xmlns:primitives="clr-namespace:Xceed.Wpf.Toolkit.Primitives;assembly=Xceed.Wpf.Toolkit"
+                 xmlns:toolkit="clr-namespace:Xceed.Wpf.Toolkit;assembly=Xceed.Wpf.Toolkit"
                  Title="StyleableWindows" >
    <local:DemoView.Description>
       <Paragraph FontSize="14" FontFamily="Segoe">
@@ -45,7 +47,7 @@
          <conv:WindowStateToBoolConverter x:Key="windowStateBoolConv" />
 
          <!--Base style for ChildWindowStyle and MessageBoxStyle-->
-         <Style x:Key="windowControlStyle" TargetType="{x:Type xctk:WindowControl}">
+         <Style x:Key="windowControlStyle" TargetType="{x:Type primitives:WindowControl}">
             <Setter Property="WindowBackground" Value="{Binding WindowBackground}" />
             <Setter Property="WindowBorderBrush" Value="{Binding WindowBorderBrush}" />
             <Setter Property="WindowBorderThickness" Value="{Binding WindowBorderThickness}" />
@@ -58,7 +60,7 @@
          </Style>
 
          <!--Style for the MessageBox-->
-         <Style x:Key="messageBoxStyle" TargetType="{x:Type xctk:MessageBox}" BasedOn="{StaticResource windowControlStyle}">
+         <Style x:Key="messageBoxStyle" TargetType="{x:Type toolkit:MessageBox}" BasedOn="{StaticResource windowControlStyle}">
             <Setter Property="ButtonRegionBackground" Value="{StaticResource FancyButtonRegionBackground}" />
             <Setter Property="OkButtonStyle" Value="{StaticResource FancyButtonStyle}" />
             <Setter Property="CancelButtonStyle" Value="{StaticResource FancyButtonStyle}" />
@@ -150,8 +152,8 @@
             <GroupBox Header="ChildWindow" Margin="5">
                <Border BorderThickness="1" 
                         BorderBrush="Black" >
-                  <xctk:WindowContainer >
-                     <xctk:ChildWindow x:Name="_childWindow" Width="325" Height="100"
+                  <primitives:WindowContainer >
+                     <toolkit:ChildWindow x:Name="_childWindow" Width="325" Height="100"
                                     Caption="Toolkit for WPF ChildWindow"
                                     WindowStartupLocation="Center"
                                     IsModal="True"
@@ -161,8 +163,8 @@
                         <TextBlock>
                            This is the content of the child window.
                         </TextBlock>
-                     </xctk:ChildWindow>
-                  </xctk:WindowContainer>
+                     </toolkit:ChildWindow>
+                  </primitives:WindowContainer>
                </Border>
             </GroupBox>
          </DockPanel>

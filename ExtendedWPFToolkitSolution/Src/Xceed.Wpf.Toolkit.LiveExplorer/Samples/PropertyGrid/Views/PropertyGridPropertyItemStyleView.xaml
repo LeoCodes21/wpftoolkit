@@ -20,6 +20,7 @@
                 xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
                 xmlns:v="clr-namespace:Xceed.Wpf.Toolkit.LiveExplorer.Samples.PropertyGrid.Views"
                 xmlns:s="clr-namespace:System;assembly=mscorlib"
+                xmlns:propertyGrid="clr-namespace:Xceed.Wpf.Toolkit.PropertyGrid;assembly=Xceed.Wpf.Toolkit"
                 VerticalScrollBarVisibility="Disabled"
                 Title="Customizing PropertyItems display">
     <local:DemoView.Description>
@@ -48,15 +49,15 @@
       </StackPanel>
 
 
-      <xctk:PropertyGrid x:Name="_propertyGrid" Grid.Row="1" Width="350" MaxHeight="300"
+      <propertyGrid:PropertyGrid x:Name="_propertyGrid" Grid.Row="1" Width="350" MaxHeight="300"
                          SelectedObject="{Binding}"
                          PreparePropertyItem="OnPreparePropertyItem">
-         <xctk:PropertyGrid.PropertyContainerStyle>
+         <propertyGrid:PropertyGrid.PropertyContainerStyle>
             <!--This style will be set to all PropertyItem instances (direct and expanded) in the property grid. -->
-            <Style TargetType="{x:Type xctk:PropertyItemBase}">
+            <Style TargetType="{x:Type propertyGrid:PropertyItemBase}">
                <Setter Property="Foreground" Value="Red" />
             </Style>
-         </xctk:PropertyGrid.PropertyContainerStyle>
-      </xctk:PropertyGrid>
+         </propertyGrid:PropertyGrid.PropertyContainerStyle>
+      </propertyGrid:PropertyGrid>
    </Grid>      
 </local:DemoView>

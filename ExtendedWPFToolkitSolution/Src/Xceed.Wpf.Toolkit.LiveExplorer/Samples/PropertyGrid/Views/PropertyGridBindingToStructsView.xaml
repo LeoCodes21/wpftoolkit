@@ -20,6 +20,7 @@
                  xmlns:conv="clr-namespace:Xceed.Wpf.Toolkit.LiveExplorer.Samples.PropertyGrid.Converters"
                  xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
                  xmlns:propertyGrid="clr-namespace:Xceed.Wpf.Toolkit.LiveExplorer.Samples.PropertyGrid.Views"
+                 xmlns:propertyGrid1="clr-namespace:Xceed.Wpf.Toolkit.PropertyGrid;assembly=Xceed.Wpf.Toolkit"
                  VerticalScrollBarVisibility="Disabled"
                  Title="PropertyGrid Binding to Structs">
     <local:DemoView.Description>
@@ -39,10 +40,10 @@
       </Grid.RowDefinitions>
 
       <TextBlock Text="The solution to this problem is to create a custom editor and provide an IValueConverter to handle the proper conversion of the Struct values." TextWrapping="Wrap" />
-      <xctk:PropertyGrid x:Name="_propertyGrid" Grid.Row="1" Width="450" MaxHeight="250" Margin="10">
-         <xctk:PropertyGrid.EditorDefinitions>
-            <xctk:EditorTemplateDefinition TargetProperties="{x:Type propertyGrid:Dimension}">
-               <xctk:EditorTemplateDefinition.EditingTemplate>
+      <propertyGrid1:PropertyGrid x:Name="_propertyGrid" Grid.Row="1" Width="450" MaxHeight="250" Margin="10">
+         <propertyGrid1:PropertyGrid.EditorDefinitions>
+            <propertyGrid1:EditorTemplateDefinition TargetProperties="{x:Type propertyGrid:Dimension}">
+               <propertyGrid1:EditorTemplateDefinition.EditingTemplate>
                   <DataTemplate>
                      <Grid Margin="5">
                         <Grid.RowDefinitions>
@@ -59,9 +60,9 @@
                         <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Path=Value, Converter={StaticResource DimensionsConverter},ConverterParameter=Weight}" />
                      </Grid>
                   </DataTemplate>
-               </xctk:EditorTemplateDefinition.EditingTemplate>
-            </xctk:EditorTemplateDefinition>
-         </xctk:PropertyGrid.EditorDefinitions>
-      </xctk:PropertyGrid>
+               </propertyGrid1:EditorTemplateDefinition.EditingTemplate>
+            </propertyGrid1:EditorTemplateDefinition>
+         </propertyGrid1:PropertyGrid.EditorDefinitions>
+      </propertyGrid1:PropertyGrid>
    </Grid>
 </local:DemoView>

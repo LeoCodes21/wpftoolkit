@@ -19,8 +19,14 @@
                 xmlns:xcad="http://schemas.xceed.com/wpf/xaml/avalondock"
                 xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
                 xmlns:s="clr-namespace:System;assembly=mscorlib"
-                xmlns:view="clr-namespace:Xceed.Wpf.Toolkit.LiveExplorer.Samples.Theming.Views"
                 xmlns:local="clr-namespace:Xceed.Wpf.Toolkit.LiveExplorer"
+                xmlns:propertyGrid="clr-namespace:Xceed.Wpf.Toolkit.PropertyGrid;assembly=Xceed.Wpf.Toolkit"
+                xmlns:layout="clr-namespace:Xceed.Wpf.AvalonDock.Layout;assembly=Xceed.Wpf.AvalonDock"
+                xmlns:avalonDock="clr-namespace:Xceed.Wpf.AvalonDock;assembly=Xceed.Wpf.AvalonDock"
+                xmlns:themes="clr-namespace:Xceed.Wpf.AvalonDock.Themes;assembly=Xceed.Wpf.AvalonDock.Themes.Aero"
+                xmlns:themes1="clr-namespace:Xceed.Wpf.AvalonDock.Themes;assembly=Xceed.Wpf.AvalonDock.Themes.VS2010"
+                xmlns:themes2="clr-namespace:Xceed.Wpf.AvalonDock.Themes;assembly=Xceed.Wpf.AvalonDock.Themes.Metro"
+                xmlns:views="clr-namespace:Xceed.Wpf.Toolkit.LiveExplorer.Samples.Theming.Views"
                 Title="Theming AvalonDock"
                 x:Name="_demo">
    <local:DemoView.Description>
@@ -122,64 +128,64 @@
                          SelectedIndex="0"
                          Width="160"
                          Height="25">
-                  <view:AvalonDockComboBoxItem Content="Generic"
+                  <views:AvalonDockComboBoxItem Content="Generic"
                                                Selected="DefaultComboBoxItem_Selected"
-                                               ThemeEnum="{x:Static view:AvalonDockThemesEnum.Generic}"/>
-                  <view:AvalonDockComboBoxItem Content="Aero"
+                                               ThemeEnum="{x:Static views:AvalonDockThemesEnum.Generic}"/>
+                  <views:AvalonDockComboBoxItem Content="Aero"
                                                Selected="DefaultComboBoxItem_Selected"
-                                               ThemeEnum="{x:Static view:AvalonDockThemesEnum.Aero}">
-                     <view:AvalonDockComboBoxItem.Tag>
-                        <xcad:AeroTheme />
-                     </view:AvalonDockComboBoxItem.Tag>
-                  </view:AvalonDockComboBoxItem>
-                  <view:AvalonDockComboBoxItem Content="VS2010"
+                                               ThemeEnum="{x:Static views:AvalonDockThemesEnum.Aero}">
+                     <views:AvalonDockComboBoxItem.Tag>
+                        <themes:AeroTheme />
+                     </views:AvalonDockComboBoxItem.Tag>
+                  </views:AvalonDockComboBoxItem>
+                  <views:AvalonDockComboBoxItem Content="VS2010"
                                                Selected="DefaultComboBoxItem_Selected"
-                                               ThemeEnum="{x:Static view:AvalonDockThemesEnum.VS2010}">
-                     <view:AvalonDockComboBoxItem.Tag>
-                        <xcad:VS2010Theme />
-                     </view:AvalonDockComboBoxItem.Tag>
-                  </view:AvalonDockComboBoxItem>
-                  <view:AvalonDockComboBoxItem Content="Metro"
+                                               ThemeEnum="{x:Static views:AvalonDockThemesEnum.VS2010}">
+                     <views:AvalonDockComboBoxItem.Tag>
+                        <themes1:VS2010Theme />
+                     </views:AvalonDockComboBoxItem.Tag>
+                  </views:AvalonDockComboBoxItem>
+                  <views:AvalonDockComboBoxItem Content="Metro"
                                                Selected="DefaultComboBoxItem_Selected"
-                                               ThemeEnum="{x:Static view:AvalonDockThemesEnum.Metro}">
-                     <view:AvalonDockComboBoxItem.Tag>
-                        <xcad:MetroTheme />
-                     </view:AvalonDockComboBoxItem.Tag>
-                  </view:AvalonDockComboBoxItem>
-                  <view:AvalonDockComboBoxItem Style="{StaticResource plusItem}"
+                                               ThemeEnum="{x:Static views:AvalonDockThemesEnum.Metro}">
+                     <views:AvalonDockComboBoxItem.Tag>
+                        <themes2:MetroTheme />
+                     </views:AvalonDockComboBoxItem.Tag>
+                  </views:AvalonDockComboBoxItem>
+                  <views:AvalonDockComboBoxItem Style="{StaticResource plusItem}"
                                                Content="Office2007 Black"
                                                Selected="DefaultComboBoxItem_Selected"
-                                               ThemeEnum="{x:Static view:AvalonDockThemesEnum.Office2007Black}">
-                  </view:AvalonDockComboBoxItem>
-                  <view:AvalonDockComboBoxItem Style="{StaticResource plusItem}"
+                                               ThemeEnum="{x:Static views:AvalonDockThemesEnum.Office2007Black}">
+                  </views:AvalonDockComboBoxItem>
+                  <views:AvalonDockComboBoxItem Style="{StaticResource plusItem}"
                                                Content="Office2007 Blue"
                                                Selected="DefaultComboBoxItem_Selected"
-                                               ThemeEnum="{x:Static view:AvalonDockThemesEnum.Office2007Blue}">
-                  </view:AvalonDockComboBoxItem>
-                  <view:AvalonDockComboBoxItem Style="{StaticResource plusItem}"
+                                               ThemeEnum="{x:Static views:AvalonDockThemesEnum.Office2007Blue}">
+                  </views:AvalonDockComboBoxItem>
+                  <views:AvalonDockComboBoxItem Style="{StaticResource plusItem}"
                                                Content="Office2007 Silver"
                                                Selected="DefaultComboBoxItem_Selected"
-                                               ThemeEnum="{x:Static view:AvalonDockThemesEnum.Office2007Silver}">
-                  </view:AvalonDockComboBoxItem>
-                  <view:AvalonDockComboBoxItem Style="{StaticResource plusItem}"
+                                               ThemeEnum="{x:Static views:AvalonDockThemesEnum.Office2007Silver}">
+                  </views:AvalonDockComboBoxItem>
+                  <views:AvalonDockComboBoxItem Style="{StaticResource plusItem}"
                                                Content="Windows 10"
                                                Selected="DefaultComboBoxItem_Selected"
-                                               ThemeEnum="{x:Static view:AvalonDockThemesEnum.Windows10}">
-                  </view:AvalonDockComboBoxItem>
-                  <view:AvalonDockComboBoxItem x:Name="metroDarkComboBoxItem"
+                                               ThemeEnum="{x:Static views:AvalonDockThemesEnum.Windows10}">
+                  </views:AvalonDockComboBoxItem>
+                  <views:AvalonDockComboBoxItem x:Name="metroDarkComboBoxItem"
                                                Style="{StaticResource plusItem}"
                                                Content="Metro Dark"
                                                Selected="MetroComboBoxItem_Selected"
-                                               ThemeEnum="{x:Static view:AvalonDockThemesEnum.MetroDark}">
+                                               ThemeEnum="{x:Static views:AvalonDockThemesEnum.MetroDark}">
                      <!--MetroDark Theme is set in CodeBehind-->
-                  </view:AvalonDockComboBoxItem>
-                  <view:AvalonDockComboBoxItem x:Name="metroLightComboBoxItem"
+                  </views:AvalonDockComboBoxItem>
+                  <views:AvalonDockComboBoxItem x:Name="metroLightComboBoxItem"
                                                Style="{StaticResource plusItem}"
                                                Content="Metro Light"
                                                Selected="MetroComboBoxItem_Selected"
-                                               ThemeEnum="{x:Static view:AvalonDockThemesEnum.MetroLight}">
+                                               ThemeEnum="{x:Static views:AvalonDockThemesEnum.MetroLight}">
                      <!--MetroLight Theme is set in CodeBehind-->
-                  </view:AvalonDockComboBoxItem>
+                  </views:AvalonDockComboBoxItem>
                </ComboBox>
             </StackPanel>
 
@@ -193,13 +199,13 @@
 
       <Border x:Name="SampleBorder"
               Grid.Row="2">
-         <xcad:DockingManager x:Name="_dockingManager"
+         <avalonDock:DockingManager x:Name="_dockingManager"
                               MaxHeight="395"
                               AllowMixedOrientation="True"
                               BorderBrush="Black"
                               BorderThickness="1"
                               Theme="{Binding ElementName=_themeCombo, Path=SelectedItem.Tag}">
-            <xcad:DockingManager.DocumentHeaderTemplate>
+            <avalonDock:DockingManager.DocumentHeaderTemplate>
                <DataTemplate>
                   <StackPanel Orientation="Horizontal">
                      <Image Source="{Binding IconSource}"
@@ -207,51 +213,51 @@
                      <TextBlock Text="{Binding Title}" />
                   </StackPanel>
                </DataTemplate>
-            </xcad:DockingManager.DocumentHeaderTemplate>
-            <xcad:LayoutRoot x:Name="_layoutRoot">
-               <xcad:LayoutPanel Orientation="Horizontal">
-                  <xcad:LayoutAnchorablePane DockWidth="200">
-                     <xcad:LayoutAnchorable ContentId="properties"
+            </avalonDock:DockingManager.DocumentHeaderTemplate>
+            <layout:LayoutRoot x:Name="_layoutRoot">
+               <layout:LayoutPanel Orientation="Horizontal">
+                  <layout:LayoutAnchorablePane DockWidth="200">
+                     <layout:LayoutAnchorable ContentId="properties"
                                             Title="Properties"
                                             CanHide="False"
                                             CanClose="False"
                                             AutoHideWidth="240"
                                             IconSource="../Images/property-blue.png">
-                        <xctk:PropertyGrid NameColumnWidth="110"
+                        <propertyGrid:PropertyGrid NameColumnWidth="110"
                                            SelectedObject="{Binding ElementName=_layoutRoot, Path=LastFocusedDocument.Content}"
                                            AutoGenerateProperties="False">
-                           <xctk:PropertyGrid.PropertyDefinitions>
-                              <xctk:PropertyDefinition TargetProperties="Background" />
-                              <xctk:PropertyDefinition TargetProperties="BorderBrush" />
-                              <xctk:PropertyDefinition TargetProperties="BorderThickness" />
-                              <xctk:PropertyDefinition TargetProperties="FontSize" />
-                              <xctk:PropertyDefinition TargetProperties="FontStyle" />
-                              <xctk:PropertyDefinition TargetProperties="Width" />
-                              <xctk:PropertyDefinition TargetProperties="Height" />
-                           </xctk:PropertyGrid.PropertyDefinitions>
-                        </xctk:PropertyGrid>
-                     </xcad:LayoutAnchorable>
-                  </xcad:LayoutAnchorablePane>
-                  <xcad:LayoutDocumentPaneGroup>
-                     <xcad:LayoutDocumentPane>
-                        <xcad:LayoutDocument ContentId="document1"
+                           <propertyGrid:PropertyGrid.PropertyDefinitions>
+                              <propertyGrid:PropertyDefinition TargetProperties="Background" />
+                              <propertyGrid:PropertyDefinition TargetProperties="BorderBrush" />
+                              <propertyGrid:PropertyDefinition TargetProperties="BorderThickness" />
+                              <propertyGrid:PropertyDefinition TargetProperties="FontSize" />
+                              <propertyGrid:PropertyDefinition TargetProperties="FontStyle" />
+                              <propertyGrid:PropertyDefinition TargetProperties="Width" />
+                              <propertyGrid:PropertyDefinition TargetProperties="Height" />
+                           </propertyGrid:PropertyGrid.PropertyDefinitions>
+                        </propertyGrid:PropertyGrid>
+                     </layout:LayoutAnchorable>
+                  </layout:LayoutAnchorablePane>
+                  <layout:LayoutDocumentPaneGroup>
+                     <layout:LayoutDocumentPane>
+                        <layout:LayoutDocument ContentId="document1"
                                              Title="Document 1"
                                              IconSource="../Images/document.png">
                            <Button Content="Document 1 Content"
                                    HorizontalAlignment="Center"
                                    VerticalAlignment="Center" />
-                        </xcad:LayoutDocument>
-                        <xcad:LayoutDocument ContentId="document2"
+                        </layout:LayoutDocument>
+                        <layout:LayoutDocument ContentId="document2"
                                              Title="Document 2"
                                              IconSource="../Images/document.png">
                            <TextBox Text="Document 2 Content"
                                     AcceptsReturn="True" />
-                        </xcad:LayoutDocument>
-                     </xcad:LayoutDocumentPane>
-                  </xcad:LayoutDocumentPaneGroup >
-                  <xcad:LayoutAnchorablePaneGroup DockWidth="125">
-                     <xcad:LayoutAnchorablePane>
-                        <xcad:LayoutAnchorable ContentId="alarms"
+                        </layout:LayoutDocument>
+                     </layout:LayoutDocumentPane>
+                  </layout:LayoutDocumentPaneGroup >
+                  <layout:LayoutAnchorablePaneGroup DockWidth="125">
+                     <layout:LayoutAnchorablePane>
+                        <layout:LayoutAnchorable ContentId="alarms"
                                                Title="Alarms"
                                                IconSource="../Images/alarm-clock-blue.png">
                            <ListBox>
@@ -259,8 +265,8 @@
                               <s:String>Alarm 2</s:String>
                               <s:String>Alarm 3</s:String>
                            </ListBox>
-                        </xcad:LayoutAnchorable>
-                        <xcad:LayoutAnchorable ContentId="journal"
+                        </layout:LayoutAnchorable>
+                        <layout:LayoutAnchorable ContentId="journal"
                                                Title="Journal">
                            <RichTextBox>
                               <FlowDocument>
@@ -273,15 +279,15 @@
                                  </Paragraph>
                               </FlowDocument>
                            </RichTextBox>
-                        </xcad:LayoutAnchorable>
-                     </xcad:LayoutAnchorablePane>
-                  </xcad:LayoutAnchorablePaneGroup>
-               </xcad:LayoutPanel>
+                        </layout:LayoutAnchorable>
+                     </layout:LayoutAnchorablePane>
+                  </layout:LayoutAnchorablePaneGroup>
+               </layout:LayoutPanel>
 
-               <xcad:LayoutRoot.LeftSide>
-                  <xcad:LayoutAnchorSide>
-                     <xcad:LayoutAnchorGroup>
-                        <xcad:LayoutAnchorable Title="Agenda"
+               <layout:LayoutRoot.LeftSide>
+                  <layout:LayoutAnchorSide>
+                     <layout:LayoutAnchorGroup>
+                        <layout:LayoutAnchorable Title="Agenda"
                                                ContentId="agenda"
                                                IconSource="../Images/address-book-open.png">
                            <TextBlock Text="Agenda Content"
@@ -289,8 +295,8 @@
                                       FontSize="18"
                                       FontWeight="Black"
                                       TextWrapping="Wrap" />
-                        </xcad:LayoutAnchorable>
-                        <xcad:LayoutAnchorable Title="Contacts"
+                        </layout:LayoutAnchorable>
+                        <layout:LayoutAnchorable Title="Contacts"
                                                ContentId="contacts"
                                                IconSource="../Images/address-book--pencil.png">
                            <TextBlock Text="Contacts Content"
@@ -298,12 +304,12 @@
                                       FontSize="18"
                                       FontWeight="Black"
                                       TextWrapping="Wrap" />
-                        </xcad:LayoutAnchorable>
-                     </xcad:LayoutAnchorGroup>
-                  </xcad:LayoutAnchorSide>
-               </xcad:LayoutRoot.LeftSide>
-            </xcad:LayoutRoot>
-         </xcad:DockingManager>
+                        </layout:LayoutAnchorable>
+                     </layout:LayoutAnchorGroup>
+                  </layout:LayoutAnchorSide>
+               </layout:LayoutRoot.LeftSide>
+            </layout:LayoutRoot>
+         </avalonDock:DockingManager>
       </Border>
 
       <Image x:Name="_openSourceScreenShot" Grid.Row="2" Height="395" Visibility="Collapsed" />

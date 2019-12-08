@@ -18,6 +18,7 @@
                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                 xmlns:local="clr-namespace:Xceed.Wpf.Toolkit.LiveExplorer"
                 xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+                xmlns:propertyGrid="clr-namespace:Xceed.Wpf.Toolkit.PropertyGrid;assembly=Xceed.Wpf.Toolkit"
                 VerticalScrollBarVisibility="Disabled"
                 Title="PropertyGrid Default Editors">
     <local:DemoView.Description>
@@ -33,7 +34,7 @@
       <TextBlock DockPanel.Dock="Top" 
                  Text="Click on each property and see the description for details on the underlying editor."
                  TextWrapping="Wrap"/>
-      <xctk:PropertyGrid x:Name="_propertyGrid" SelectedObject="{Binding}"  Width="450" Margin="10,30,0,0" />
+      <propertyGrid:PropertyGrid x:Name="_propertyGrid" SelectedObject="{Binding}"  Width="450" Margin="10,30,0,0" />
    </DockPanel>
 
 

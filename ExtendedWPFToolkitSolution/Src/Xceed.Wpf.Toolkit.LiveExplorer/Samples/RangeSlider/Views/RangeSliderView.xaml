@@ -21,6 +21,7 @@
                 xmlns:xctkconv="clr-namespace:Xceed.Wpf.Toolkit.Core.Converters;assembly=Xceed.Wpf.Toolkit"
                 xmlns:conv="clr-namespace:Xceed.Wpf.Toolkit.LiveExplorer.Samples.RangeSlider.Converters"
                 xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+                xmlns:toolkit="clr-namespace:Xceed.Wpf.Toolkit;assembly=Xceed.Wpf.Toolkit"
                 Title="RangeSlider">
 
    <local:DemoView.Resources>
@@ -129,7 +130,7 @@
                                  HorizontalAlignment="Center"
                                  VerticalAlignment="Center">
                         <TextBlock x:Name="TextContentMin"
-                                   Text="{Binding RelativeSource={RelativeSource AncestorType={x:Type xctk:RangeSlider}}, Path=Minimum, StringFormat=\{0:00.00\}}"
+                                   Text="{Binding RelativeSource={RelativeSource AncestorType={x:Type toolkit:RangeSlider}}, Path=Minimum, StringFormat=\{0:00.00\}}"
                                    Foreground="White"
                                    HorizontalAlignment="Center"
                                    VerticalAlignment="Center" />
@@ -138,7 +139,7 @@
                                     HorizontalAlignment="Center"
                                     VerticalAlignment="Center" />
                         <TextBlock x:Name="TextContentLower"
-                                   Text="{Binding RelativeSource={RelativeSource AncestorType={x:Type xctk:RangeSlider}}, Path=LowerValue, StringFormat=\{0:00.00\}}"
+                                   Text="{Binding RelativeSource={RelativeSource AncestorType={x:Type toolkit:RangeSlider}}, Path=LowerValue, StringFormat=\{0:00.00\}}"
                                    Foreground="White"
                                    HorizontalAlignment="Center"
                                    VerticalAlignment="Center" />
@@ -250,7 +251,7 @@
                                  HorizontalAlignment="Center"
                                  VerticalAlignment="Center">
                         <TextBlock x:Name="TextContentLower"
-                                   Text="{Binding RelativeSource={RelativeSource AncestorType={x:Type xctk:RangeSlider}}, Path=LowerValue, StringFormat=\{0:00.00\}}"
+                                   Text="{Binding RelativeSource={RelativeSource AncestorType={x:Type toolkit:RangeSlider}}, Path=LowerValue, StringFormat=\{0:00.00\}}"
                                    Foreground="White"
                                    HorizontalAlignment="Center"
                                    VerticalAlignment="Center" />
@@ -259,7 +260,7 @@
                                     HorizontalAlignment="Center"
                                     VerticalAlignment="Center" />
                         <TextBlock x:Name="TextContentHigher"
-                                   Text="{Binding RelativeSource={RelativeSource AncestorType={x:Type xctk:RangeSlider}}, Path=HigherValue, StringFormat=\{0:00.00\}}"
+                                   Text="{Binding RelativeSource={RelativeSource AncestorType={x:Type toolkit:RangeSlider}}, Path=HigherValue, StringFormat=\{0:00.00\}}"
                                    Foreground="White"
                                    HorizontalAlignment="Center"
                                    VerticalAlignment="Center" />
@@ -389,7 +390,7 @@
                                  HorizontalAlignment="Center"
                                  VerticalAlignment="Center">
                         <TextBlock x:Name="TextContentHigher"
-                                   Text="{Binding RelativeSource={RelativeSource AncestorType={x:Type xctk:RangeSlider}}, Path=HigherValue, StringFormat=\{0:00.00\}}"
+                                   Text="{Binding RelativeSource={RelativeSource AncestorType={x:Type toolkit:RangeSlider}}, Path=HigherValue, StringFormat=\{0:00.00\}}"
                                    Foreground="White"
                                    HorizontalAlignment="Center"
                                    VerticalAlignment="Center" />
@@ -398,7 +399,7 @@
                                     HorizontalAlignment="Center"
                                     VerticalAlignment="Center" />
                         <TextBlock x:Name="TextContentMax"
-                                   Text="{Binding RelativeSource={RelativeSource AncestorType={x:Type xctk:RangeSlider}}, Path=Maximum, StringFormat=\{0:00.00\}}"
+                                   Text="{Binding RelativeSource={RelativeSource AncestorType={x:Type toolkit:RangeSlider}}, Path=Maximum, StringFormat=\{0:00.00\}}"
                                    Foreground="White"
                                    HorizontalAlignment="Center"
                                    VerticalAlignment="Center" />
@@ -482,7 +483,7 @@
             <!-- Column 1 -->
             <TextBlock Text="Minimum:"
                        VerticalAlignment="Center" />
-            <xctk:DoubleUpDown Grid.Column="1"
+            <toolkit:DoubleUpDown Grid.Column="1"
                                Value="{Binding Minimum, ElementName=_rangeSlider}"
                                FormatString="0.00"
                                Increment="{Binding Step, ElementName=_rangeSlider}"
@@ -492,7 +493,7 @@
             <TextBlock Text="Maximum:"
                        Grid.Row="1"
                        VerticalAlignment="Center" />
-            <xctk:DoubleUpDown Value="{Binding Maximum, ElementName=_rangeSlider}"
+            <toolkit:DoubleUpDown Value="{Binding Maximum, ElementName=_rangeSlider}"
                                Grid.Row="1"
                                Grid.Column="1"
                                FormatString="0.00"
@@ -503,7 +504,7 @@
             <TextBlock Text="Lower Value:"
                        Grid.Row="2"
                        VerticalAlignment="Center" />
-            <xctk:DoubleUpDown Value="{Binding LowerValue, ElementName=_rangeSlider }"
+            <toolkit:DoubleUpDown Value="{Binding LowerValue, ElementName=_rangeSlider }"
                                Grid.Row="2"
                                Grid.Column="1"
                                FormatString="0.00"
@@ -514,7 +515,7 @@
             <TextBlock Text="Higher Value:"
                        Grid.Row="3"
                        VerticalAlignment="Center" />
-            <xctk:DoubleUpDown Value="{Binding HigherValue, ElementName=_rangeSlider}"
+            <toolkit:DoubleUpDown Value="{Binding HigherValue, ElementName=_rangeSlider}"
                                Grid.Row="3"
                                Grid.Column="1"
                                FormatString="0.00"
@@ -525,7 +526,7 @@
             <TextBlock Text="Step:"
                        Grid.Row="4"
                        VerticalAlignment="Center" />
-            <xctk:DoubleUpDown Value="{Binding Step, ElementName=_rangeSlider}"
+            <toolkit:DoubleUpDown Value="{Binding Step, ElementName=_rangeSlider}"
                                Grid.Row="4"
                                Grid.Column="1"
                                FormatString="0.00"
@@ -552,7 +553,7 @@
                        Grid.Column="2"
                        VerticalAlignment="Center"
                        Margin="10,5,5,5" />
-            <xctk:ColorPicker Grid.Column="3"
+            <toolkit:ColorPicker Grid.Column="3"
                               SelectedColor="{Binding LowerThumbBackground, ElementName=_rangeSlider, Converter={StaticResource SolidColorBrushToColorConverter}}"
                               VerticalAlignment="Center"
                               Margin="5" />
@@ -562,7 +563,7 @@
                        Grid.Column="2"
                        VerticalAlignment="Center"
                        Margin="10,5,5,5" />
-            <xctk:ColorPicker Grid.Row="1"
+            <toolkit:ColorPicker Grid.Row="1"
                               Grid.Column="3"
                               SelectedColor="{Binding HigherThumbBackground, ElementName=_rangeSlider, Converter={StaticResource SolidColorBrushToColorConverter}}"
                               VerticalAlignment="Center"
@@ -573,7 +574,7 @@
                        Grid.Column="2"
                        VerticalAlignment="Center"
                        Margin="10,5,5,5" />
-            <xctk:ColorPicker Grid.Row="2"
+            <toolkit:ColorPicker Grid.Row="2"
                               Grid.Column="3"
                               SelectedColor="{Binding LowerRangeBackground, ElementName=_rangeSlider, Converter={StaticResource SolidColorBrushToColorConverter}}"
                               VerticalAlignment="Center"
@@ -584,7 +585,7 @@
                        Grid.Column="2"
                        VerticalAlignment="Center"
                        Margin="10,5,5,5" />
-            <xctk:ColorPicker Grid.Row="3"
+            <toolkit:ColorPicker Grid.Row="3"
                               Grid.Column="3"
                               SelectedColor="{Binding RangeBackground, ElementName=_rangeSlider, Converter={StaticResource SolidColorBrushToColorConverter}}"
                               VerticalAlignment="Center"
@@ -595,7 +596,7 @@
                        Grid.Column="2"
                        VerticalAlignment="Center"
                        Margin="10,5,5,5" />
-            <xctk:ColorPicker Grid.Row="4"
+            <toolkit:ColorPicker Grid.Row="4"
                               Grid.Column="3"
                               SelectedColor="{Binding HigherRangeBackground, ElementName=_rangeSlider, Converter={StaticResource SolidColorBrushToColorConverter}}"
                               VerticalAlignment="Center"
@@ -620,7 +621,7 @@
                        Grid.Column="2"
                        VerticalAlignment="Center"
                        Margin="10,5,5,5" />
-            <xctk:IntegerUpDown Value="{Binding AutoToolTipPrecision, ElementName=_rangeSlider}"
+            <toolkit:IntegerUpDown Value="{Binding AutoToolTipPrecision, ElementName=_rangeSlider}"
                                 Grid.Row="6"
                                 Grid.Column="3"
                                 Minimum="0"
@@ -746,7 +747,7 @@
                        Margin="10,5,5,5"
                        IsEnabled="{Binding IsEnabled, ElementName=_tickFrequency}"
                        Style="{StaticResource DisableGrayText}"/>
-            <xctk:DoubleUpDown x:Name="_tickFrequency"
+            <toolkit:DoubleUpDown x:Name="_tickFrequency"
                                Value="{Binding TickFrequency, ElementName=_rangeSlider}"
                                Grid.Row="6"
                                Grid.Column="5"
@@ -756,15 +757,15 @@
                                Margin="5"
                                ToolTip="Gets/sets the interval between tick marks."
                                IsEnabled="{Binding SelectedItem, ElementName=_tickPlacementComboBox, Converter={StaticResource RangeSliderEnabledConverter}}">
-               <xctk:DoubleUpDown.Maximum>
+               <toolkit:DoubleUpDown.Maximum>
                   <MultiBinding Converter="{StaticResource AbsoluteAdditionConverter}">
                      <Binding ElementName="_rangeSlider"
                               Path="Minimum" />
                      <Binding ElementName="_rangeSlider"
                               Path="Maximum" />
                   </MultiBinding>
-               </xctk:DoubleUpDown.Maximum>
-            </xctk:DoubleUpDown>
+               </toolkit:DoubleUpDown.Maximum>
+            </toolkit:DoubleUpDown>
          </Grid>
       </GroupBox>
 
@@ -772,7 +773,7 @@
                   Margin="10">
          <TextBlock Text="Usage:"
                     Style="{StaticResource Header}" />
-         <xctk:RangeSlider x:Name="_rangeSlider"
+         <toolkit:RangeSlider x:Name="_rangeSlider"
                            HorizontalAlignment="Center"
                            VerticalAlignment="Center"
                            Minimum="0"
@@ -795,8 +796,8 @@
                            TickFrequency="1"
                            AutoToolTipPlacement="None"
                            AutoToolTipPrecision="0">
-            <xctk:RangeSlider.Resources>
-               <Style TargetType="xctk:RangeSlider">
+            <toolkit:RangeSlider.Resources>
+               <Style TargetType="toolkit:RangeSlider">
                   <Style.Triggers>
                      <Trigger Property="Orientation"
                               Value="Horizontal">
@@ -810,8 +811,8 @@
                      </Trigger>
                   </Style.Triggers>
                </Style>
-            </xctk:RangeSlider.Resources>
-         </xctk:RangeSlider>
+            </toolkit:RangeSlider.Resources>
+         </toolkit:RangeSlider>
       </StackPanel>
    </Grid>
 </local:DemoView>

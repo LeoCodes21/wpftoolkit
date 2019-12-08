@@ -21,6 +21,7 @@
                 xmlns:sys="clr-namespace:System;assembly=mscorlib"
                 xmlns:col="clr-namespace:System.Collections;assembly=mscorlib"
                 xmlns:v="clr-namespace:Xceed.Wpf.Toolkit.LiveExplorer.Samples.PropertyGrid.Views"
+                xmlns:propertyGrid="clr-namespace:Xceed.Wpf.Toolkit.PropertyGrid;assembly=Xceed.Wpf.Toolkit"
                 x:Name="demo"
                 VerticalScrollBarVisibility="Disabled"
                 Title="Using Attributes">
@@ -90,10 +91,10 @@
                     Margin="0,10,0,0"/>
       </StackPanel>
 
-      <xctk:PropertyGrid Grid.Row="1" x:Name="_propertyGrid" Width="450" MaxHeight="650" Margin="10" 
+      <propertyGrid:PropertyGrid Grid.Row="1" x:Name="_propertyGrid" Width="450" MaxHeight="650" Margin="10" 
                          SelectedObject="{Binding}"
                          ShowDescriptionByTooltip="True">
-      </xctk:PropertyGrid>      
+      </propertyGrid:PropertyGrid>      
 
    </Grid>
 </local:DemoView>

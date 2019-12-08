@@ -18,6 +18,7 @@
                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                  xmlns:local="clr-namespace:Xceed.Wpf.Toolkit.LiveExplorer"
                  xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+                 xmlns:toolkit="clr-namespace:Xceed.Wpf.Toolkit;assembly=Xceed.Wpf.Toolkit"
                  Title="Wizard">   
      <local:DemoView.Description>
         <Paragraph FontSize="14" FontFamily="Segoe">
@@ -26,20 +27,20 @@
     </local:DemoView.Description>
 
     <local:DemoView.Resources>
-        <xctk:Wizard x:Key="_wizard" FinishButtonClosesWindow="True" Help="OnWizardHelp">
-            <xctk:WizardPage Title="Welcome to my Wizard"
+        <toolkit:Wizard x:Key="_wizard" FinishButtonClosesWindow="True" Help="OnWizardHelp">
+            <toolkit:WizardPage Title="Welcome to my Wizard"
                              Description="This Wizard will walk you though how to do something." />
-            <xctk:WizardPage PageType="Interior"
+            <toolkit:WizardPage PageType="Interior"
                              Title="Page 1"
                              Description="This is the first page in the process." />
-            <xctk:WizardPage PageType="Interior"
+            <toolkit:WizardPage PageType="Interior"
                              Title="Page 2"
                              Description="This is the second page in the process" />
-            <xctk:WizardPage PageType="Interior"
+            <toolkit:WizardPage PageType="Interior"
                              Title="Last Page"
                              Description="This is the last page in the process"
                              CanFinish="True" />
-        </xctk:Wizard>
+        </toolkit:Wizard>
     </local:DemoView.Resources>
 
     <Grid>

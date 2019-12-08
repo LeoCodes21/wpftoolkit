@@ -21,6 +21,8 @@
                  xmlns:sys="clr-namespace:System;assembly=mscorlib"
                  xmlns:conv="clr-namespace:Xceed.Wpf.Toolkit.LiveExplorer.Samples.Window.Converters"
                  xmlns:xctkconv="clr-namespace:Xceed.Wpf.Toolkit.Core.Converters;assembly=Xceed.Wpf.Toolkit"
+                 xmlns:toolkit="clr-namespace:Xceed.Wpf.Toolkit;assembly=Xceed.Wpf.Toolkit"
+                 xmlns:primitives="clr-namespace:Xceed.Wpf.Toolkit.Primitives;assembly=Xceed.Wpf.Toolkit"
                  Title="ChildWindow">
      <local:DemoView.Description>
         <Paragraph FontSize="14" FontFamily="Segoe">
@@ -42,13 +44,13 @@
       <ObjectDataProvider x:Key="WindowStates" MethodName="GetValues"
                           ObjectType="{x:Type sys:Enum}">
          <ObjectDataProvider.MethodParameters>
-            <x:Type TypeName="xctk:WindowState" />
+            <x:Type TypeName="toolkit:WindowState" />
          </ObjectDataProvider.MethodParameters>
       </ObjectDataProvider>
       <ObjectDataProvider x:Key="WindowStartupLocations" MethodName="GetValues"
                           ObjectType="{x:Type sys:Enum}">
          <ObjectDataProvider.MethodParameters>
-            <x:Type TypeName="xctk:WindowStartupLocation" />
+            <x:Type TypeName="toolkit:WindowStartupLocation" />
          </ObjectDataProvider.MethodParameters>
       </ObjectDataProvider>
    </local:DemoView.Resources>
@@ -78,10 +80,10 @@
             <TextBox Name="_txtCaption" Grid.Column="1" Margin="5" Text="ChildWindow" Width="150" VerticalAlignment="Center" />
 
             <TextBlock Grid.Row="1" Name="textBlock2" Text="Left:" Margin="2" VerticalAlignment="Center" IsEnabled="{Binding IsEnabled, ElementName=_txtLeft}" Style="{StaticResource DisableGrayText}"/>
-            <xctk:DoubleUpDown x:Name="_txtLeft" Grid.Column="1" Grid.Row="1" Value="0" Minimum="0" VerticalAlignment="Center" Margin="5" IsEnabled="{Binding SelectedIndex, ElementName=_cboWindowStartupLocations}"/>
+            <toolkit:DoubleUpDown x:Name="_txtLeft" Grid.Column="1" Grid.Row="1" Value="0" Minimum="0" VerticalAlignment="Center" Margin="5" IsEnabled="{Binding SelectedIndex, ElementName=_cboWindowStartupLocations}"/>
 
             <TextBlock Grid.Row="2" Name="textBlock3" Text="Top:" Margin="2" VerticalAlignment="Center" IsEnabled="{Binding IsEnabled, ElementName=_txtTop}" Style="{StaticResource DisableGrayText}"/>
-            <xctk:DoubleUpDown x:Name="_txtTop" Grid.Column="1" Grid.Row="2" Value="0" Minimum="0" VerticalAlignment="Center" Margin="5" IsEnabled="{Binding SelectedIndex, ElementName=_cboWindowStartupLocations}"/>
+            <toolkit:DoubleUpDown x:Name="_txtTop" Grid.Column="1" Grid.Row="2" Value="0" Minimum="0" VerticalAlignment="Center" Margin="5" IsEnabled="{Binding SelectedIndex, ElementName=_cboWindowStartupLocations}"/>
 
             <TextBlock Text="IsModal:" VerticalAlignment="Center" Margin="10,2,2,2" Grid.Column="2" />
             <CheckBox x:Name="_chkIsModal" Grid.Column="3" VerticalAlignment="Center" Margin="5" IsChecked="True" />
@@ -95,8 +97,8 @@
       </GroupBox>
 
       <Grid Grid.Row="1" Margin="10">
-        <xctk:WindowContainer ModalBackgroundBrush="LightGray">
-            <xctk:ChildWindow x:Name="_childWindow"
+        <primitives:WindowContainer ModalBackgroundBrush="LightGray">
+            <toolkit:ChildWindow x:Name="_childWindow"
                            Width="350"
                            Height="230"
                            Caption="{Binding Text, ElementName=_txtCaption}"
@@ -120,27 +122,27 @@
                </Grid.ColumnDefinitions>
 
                <TextBlock Grid.Row="0" Text="First Name:" Margin="2" VerticalAlignment="Center" />
-               <xctk:WatermarkTextBox Grid.Row="0" Grid.Column="1" Margin="2" VerticalAlignment="Center" Watermark="Enter First Name" />
+               <toolkit:WatermarkTextBox Grid.Row="0" Grid.Column="1" Margin="2" VerticalAlignment="Center" Watermark="Enter First Name" />
 
                <TextBlock Grid.Row="1" Text="Last Name:" Margin="2" VerticalAlignment="Center" />
-               <xctk:WatermarkTextBox Grid.Row="1" Grid.Column="1" Margin="2" VerticalAlignment="Center" Watermark="Enter Last Name" />
+               <toolkit:WatermarkTextBox Grid.Row="1" Grid.Column="1" Margin="2" VerticalAlignment="Center" Watermark="Enter Last Name" />
 
                <TextBlock Grid.Row="2" Text="Date of Birth:" Margin="2" VerticalAlignment="Center" />
-               <xctk:DateTimeUpDown Grid.Row="2" Grid.Column="1" Format="ShortDate" Margin="2" VerticalAlignment="Center" Watermark="Enter Date of Birth" />
+               <toolkit:DateTimeUpDown Grid.Row="2" Grid.Column="1" Format="ShortDate" Margin="2" VerticalAlignment="Center" Watermark="Enter Date of Birth" />
 
                <TextBlock Grid.Row="3" Text="Salary:" Margin="2" VerticalAlignment="Center" />
-               <xctk:IntegerUpDown Grid.Row="3" Grid.Column="1" FormatString="C2" Margin="2" VerticalAlignment="Center" Watermark="Enter Salary" />
+               <toolkit:IntegerUpDown Grid.Row="3" Grid.Column="1" FormatString="C2" Margin="2" VerticalAlignment="Center" Watermark="Enter Salary" />
 
                <TextBlock Grid.Row="4" Text="Favorite Color:" Margin="2" VerticalAlignment="Center" />
-               <xctk:ColorPicker Grid.Row="4" Grid.Column="1" Margin="2" VerticalAlignment="Center" />
+               <toolkit:ColorPicker Grid.Row="4" Grid.Column="1" Margin="2" VerticalAlignment="Center" />
 
                <StackPanel Grid.Row="5" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
                   <Button Width="65" Margin="2">OK</Button>
                   <Button Width="65" Margin="2">Cancel</Button>
                </StackPanel>
             </Grid>
-         </xctk:ChildWindow>
-        </xctk:WindowContainer>
+         </toolkit:ChildWindow>
+        </primitives:WindowContainer>
       </Grid>
    </Grid>
 </local:DemoView>

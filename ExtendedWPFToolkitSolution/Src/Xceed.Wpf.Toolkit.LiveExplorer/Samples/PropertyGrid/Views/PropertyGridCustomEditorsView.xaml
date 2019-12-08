@@ -20,6 +20,7 @@
                 xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
                 xmlns:sys="clr-namespace:System;assembly=mscorlib"
                 xmlns:col="clr-namespace:System.Collections;assembly=mscorlib"
+                xmlns:propertyGrid="clr-namespace:Xceed.Wpf.Toolkit.PropertyGrid;assembly=Xceed.Wpf.Toolkit"
                 VerticalScrollBarVisibility="Disabled"
                 Title="Using EditorTemplateDefinition">
     <local:DemoView.Description>
@@ -28,33 +29,33 @@
         </Paragraph>
     </local:DemoView.Description>
 
-   <Grid>
-      <Grid.RowDefinitions>
-         <RowDefinition Height="Auto" />
-         <RowDefinition Height="*" />
-      </Grid.RowDefinitions>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
 
-      <StackPanel Grid.Row="0" Margin="10">
-         <TextBlock Text="Click each property and look at the description to understand why the property is affected by a custom DataTemplate."
+        <StackPanel Grid.Row="0" Margin="10">
+            <TextBlock Text="Click each property and look at the description to understand why the property is affected by a custom DataTemplate."
                     TextWrapping="Wrap"/>
-         <TextBlock Text="(CLick the XAML and Code tabs to see details.)" 
+            <TextBlock Text="(CLick the XAML and Code tabs to see details.)" 
                     FontStyle="Italic"
                     Margin="0,10,0,0"/>
-      </StackPanel>
-      <xctk:PropertyGrid x:Name="_propertyGrid" Grid.Row="1" 
+        </StackPanel>
+        <propertyGrid:PropertyGrid x:Name="_propertyGrid" Grid.Row="1" 
                          Width="450" MaxHeight="375" Margin="10"
                          SelectedObject="{Binding}">
-            <xctk:PropertyGrid.EditorDefinitions>
+            <propertyGrid:PropertyGrid.EditorDefinitions>
 
-               <!--  EditorTemplateDefinition #1
+                <!--  EditorTemplateDefinition #1
                This EditorTemplateDefinition will provide a green TextBox to:
                1) All properties of type Double
                Replacing the default editor. -->
-               <xctk:EditorTemplateDefinition TargetProperties="{x:Type sys:Double}">
-                  <xctk:EditorTemplateDefinition.EditingTemplate>
-                     <DataTemplate>
-                        <TextBox Background="Green"  Text="{Binding Value}" />
-                        <!-- 
+                <propertyGrid:EditorTemplateDefinition TargetProperties="{x:Type sys:Double}">
+                    <propertyGrid:EditorTemplateDefinition.EditingTemplate>
+                        <DataTemplate>
+                            <TextBox Background="Green"  Text="{Binding Value}" />
+                            <!-- 
                         When using SelectedObject[s] bind to the "Value" property 
 
                         When using PropertiesSource or Properties to specify your items,
@@ -63,61 +64,61 @@
                         the one you specified on the 'PropertyValueBinding'
                         property of your property grid.
                         -->
-                     </DataTemplate>
-                  </xctk:EditorTemplateDefinition.EditingTemplate>
-               </xctk:EditorTemplateDefinition>
+                        </DataTemplate>
+                    </propertyGrid:EditorTemplateDefinition.EditingTemplate>
+                </propertyGrid:EditorTemplateDefinition>
 
-               <!--  EditorTemplateDefinition #2
+                <!--  EditorTemplateDefinition #2
                This EditorTemplateDefinition will provide a yellow TextBox to:
                1) The property named "LastName"
                2) The property named "FirstName"
                3) The property named "Spouse"
                Replacing the default editor. -->
-               <xctk:EditorTemplateDefinition TargetProperties="FirstName,LastName,WritingFont">
-                  <xctk:EditorTemplateDefinition.EditingTemplate>
-                     <DataTemplate>
-                        <TextBlock Background="Yellow" Text="{Binding Value}" />
-                     </DataTemplate>
-                  </xctk:EditorTemplateDefinition.EditingTemplate>
-               </xctk:EditorTemplateDefinition>
+                <propertyGrid:EditorTemplateDefinition TargetProperties="FirstName,LastName,WritingFont">
+                    <propertyGrid:EditorTemplateDefinition.EditingTemplate>
+                        <DataTemplate>
+                            <TextBlock Background="Yellow" Text="{Binding Value}" />
+                        </DataTemplate>
+                    </propertyGrid:EditorTemplateDefinition.EditingTemplate>
+                </propertyGrid:EditorTemplateDefinition>
 
-               <!--  EditorTemplateDefinition #3
+                <!--  EditorTemplateDefinition #3
                This EditorTemplateDefinition will provide a red TextBox to:
                1) The property named "Age"
                2) All properties of type DateTime
                Replacing the default editor. -->
-               <xctk:EditorTemplateDefinition >
-                  <xctk:EditorTemplateDefinition.TargetProperties>
-                     <sys:String>Age</sys:String>
-                     <xctk:TargetPropertyType Type="{x:Type sys:DateTime}" />
-                  </xctk:EditorTemplateDefinition.TargetProperties>
-                  <xctk:EditorTemplateDefinition.EditingTemplate>
-                     <DataTemplate>
-                        <TextBox Background="Red" Text="{Binding Value}" />
-                     </DataTemplate>
-                  </xctk:EditorTemplateDefinition.EditingTemplate>
-               </xctk:EditorTemplateDefinition>
+                <propertyGrid:EditorTemplateDefinition >
+                    <propertyGrid:EditorTemplateDefinition.TargetProperties>
+                        <sys:String>Age</sys:String>
+                        <propertyGrid:TargetPropertyType Type="{x:Type sys:DateTime}" />
+                    </propertyGrid:EditorTemplateDefinition.TargetProperties>
+                    <propertyGrid:EditorTemplateDefinition.EditingTemplate>
+                        <DataTemplate>
+                            <TextBox Background="Red" Text="{Binding Value}" />
+                        </DataTemplate>
+                    </propertyGrid:EditorTemplateDefinition.EditingTemplate>
+                </propertyGrid:EditorTemplateDefinition>
 
-               <!--  EditorTemplateDefinition #4
+                <!--  EditorTemplateDefinition #4
                This EditorTemplateDefinition will provide a aquamarine TextBox to:
                1) All properties of type "bool" (Boolean)
                2) All properties of type HorizontalAlignment
                3) All properties of type FontFamily
                Replacing the default editor. -->
-               <xctk:EditorTemplateDefinition >
-                  <xctk:EditorTemplateDefinition.TargetProperties>
-                     <xctk:TargetPropertyType Type="{x:Type sys:Boolean}" />
-                  <xctk:TargetPropertyType Type="{x:Type HorizontalAlignment}" />
-                  <xctk:TargetPropertyType Type="{x:Type FontFamily}" />
-               </xctk:EditorTemplateDefinition.TargetProperties>
-                  <xctk:EditorTemplateDefinition.EditingTemplate>
-                     <DataTemplate>
-                        <TextBox Background="Aquamarine" Text="{Binding Value}" />
-                     </DataTemplate>
-                  </xctk:EditorTemplateDefinition.EditingTemplate>
-               </xctk:EditorTemplateDefinition>
+                <propertyGrid:EditorTemplateDefinition >
+                    <propertyGrid:EditorTemplateDefinition.TargetProperties>
+                        <propertyGrid:TargetPropertyType Type="{x:Type sys:Boolean}" />
+                        <propertyGrid:TargetPropertyType Type="{x:Type HorizontalAlignment}" />
+                        <propertyGrid:TargetPropertyType Type="{x:Type FontFamily}" />
+                    </propertyGrid:EditorTemplateDefinition.TargetProperties>
+                    <propertyGrid:EditorTemplateDefinition.EditingTemplate>
+                        <DataTemplate>
+                            <TextBox Background="Aquamarine" Text="{Binding Value}" />
+                        </DataTemplate>
+                    </propertyGrid:EditorTemplateDefinition.EditingTemplate>
+                </propertyGrid:EditorTemplateDefinition>
 
-            </xctk:PropertyGrid.EditorDefinitions>
-         </xctk:PropertyGrid>
-   </Grid>
+            </propertyGrid:PropertyGrid.EditorDefinitions>
+        </propertyGrid:PropertyGrid>
+    </Grid>
 </local:DemoView>

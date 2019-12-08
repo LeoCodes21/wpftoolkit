@@ -19,6 +19,7 @@
                  xmlns:conv="clr-namespace:Xceed.Wpf.Toolkit.LiveExplorer.Samples.Pie.Converters"
                  xmlns:local="clr-namespace:Xceed.Wpf.Toolkit.LiveExplorer"
                  xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+                 xmlns:toolkit="clr-namespace:Xceed.Wpf.Toolkit;assembly=Xceed.Wpf.Toolkit"
                  Title="Pie Chart">
     <local:DemoView.Description>
         <Paragraph FontSize="14" FontFamily="Segoe">
@@ -147,27 +148,27 @@
                x:Name="PiesGrid"
                Height="192">
 
-            <xctk:Pie x:Name="WaterPie"
+            <toolkit:Pie x:Name="WaterPie"
                       Fill="#FFCFDCFA"
                       Stroke="#FF000000"
                       Opacity="0.5"
                       Slice="{Binding XPath=@Water}" />
 
-            <xctk:Pie x:Name="LactosePie"
+            <toolkit:Pie x:Name="LactosePie"
                       Fill="#FFEBFF68"
                       Stroke="#FF000000"
                       Opacity="0.5"
                       StartAngle="{Binding EndAngle, ElementName=WaterPie, Mode=OneWay}"
                       Slice="{Binding XPath=@Lactose}" />
 
-            <xctk:Pie x:Name="FatPie"
+            <toolkit:Pie x:Name="FatPie"
                       Fill="#FF6EFA6E"
                       Stroke="#FF000000"
                       Opacity="0.5"
                       StartAngle="{Binding EndAngle, ElementName=LactosePie, Mode=OneWay}"
                       Slice="{Binding XPath=@Fat}" />
 
-            <xctk:Pie x:Name="ProteinPie"
+            <toolkit:Pie x:Name="ProteinPie"
                       Fill="#FFFF8676"
                       Stroke="#FF000000"
                       Opacity="0.5"

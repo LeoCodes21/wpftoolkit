@@ -19,6 +19,7 @@
                  xmlns:local="clr-namespace:Xceed.Wpf.Toolkit.LiveExplorer"
                  xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
                  xmlns:s="clr-namespace:System;assembly=mscorlib"
+                 xmlns:propertyGrid="clr-namespace:Xceed.Wpf.Toolkit.PropertyGrid;assembly=Xceed.Wpf.Toolkit"
                  VerticalScrollBarVisibility="Disabled"
                  Title="PropertyGrid Category Ordering">
      <local:DemoView.Description>
@@ -45,7 +46,7 @@
          </Grid.RowDefinitions>
 
          <TextBlock Text="Non-Ordered Categories:" FontSize="16" FontWeight="Bold" HorizontalAlignment="Stretch" Margin="10"/>
-         <xctk:PropertyGrid x:Name="_propertyGrid1" Grid.Row="1" Width="290" MaxHeight="350" VerticalAlignment="Top" Margin="10"/>
+         <propertyGrid:PropertyGrid x:Name="_propertyGrid1" Grid.Row="1" Width="290" MaxHeight="350" VerticalAlignment="Top" Margin="10"/>
       </Grid>
 
       <Grid Grid.Column="1">
@@ -55,7 +56,7 @@
          </Grid.RowDefinitions>
 
          <TextBlock Grid.Column="1" Text="Ordered Categories:" FontSize="16" FontWeight="Bold" Margin="10"/>
-         <xctk:PropertyGrid x:Name="_propertyGrid2" Grid.Row="1" Grid.Column="1" Width="290" MaxHeight="350" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10"/>
+         <propertyGrid:PropertyGrid x:Name="_propertyGrid2" Grid.Row="1" Grid.Column="1" Width="290" MaxHeight="350" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10"/>
       </Grid>
    </Grid>
 </local:DemoView>

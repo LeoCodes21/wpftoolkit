@@ -19,6 +19,8 @@
                  xmlns:local="clr-namespace:Xceed.Wpf.Toolkit.LiveExplorer"
                  xmlns:conv="clr-namespace:Xceed.Wpf.Toolkit.LiveExplorer.Samples.Zoombox.Converters"
                  xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+                 xmlns:converters="clr-namespace:Xceed.Wpf.Toolkit.Core.Converters;assembly=Xceed.Wpf.Toolkit"
+                 xmlns:zoombox="clr-namespace:Xceed.Wpf.Toolkit.Zoombox;assembly=Xceed.Wpf.Toolkit"
                  Title="Zoombox">
     <local:DemoView.Description>
         <Paragraph FontSize="14" FontFamily="Segoe">
@@ -41,7 +43,7 @@
                   Background="White"
                   DataContext="{Binding ElementName=zoombox}">
          <TabControl.Resources>
-            <xctk:RoundedValueConverter x:Key="Round"
+            <converters:RoundedValueConverter x:Key="Round"
                                         Precision="2" />
 
             <conv:RectConverter x:Key="rectConverter" />
@@ -465,10 +467,10 @@
                <ItemsControl Tag="{Binding Source={StaticResource Props}, XPath=ViewStackMode}">
                   <TextBlock Text="ViewStackMode" />
                   <ComboBox  SelectedValue="{Binding ViewStackMode}">
-                     <ComboBoxItem Content="{x:Static xctk:ZoomboxViewStackMode.Auto}" />
-                     <ComboBoxItem Content="{x:Static xctk:ZoomboxViewStackMode.Default}" />
-                     <ComboBoxItem Content="{x:Static xctk:ZoomboxViewStackMode.Disabled}" />
-                     <ComboBoxItem Content="{x:Static xctk:ZoomboxViewStackMode.Manual}" />
+                     <ComboBoxItem Content="{x:Static zoombox:ZoomboxViewStackMode.Auto}" />
+                     <ComboBoxItem Content="{x:Static zoombox:ZoomboxViewStackMode.Default}" />
+                     <ComboBoxItem Content="{x:Static zoombox:ZoomboxViewStackMode.Disabled}" />
+                     <ComboBoxItem Content="{x:Static zoombox:ZoomboxViewStackMode.Manual}" />
                   </ComboBox>
                </ItemsControl>
                <ItemsControl Tag="{Binding Source={StaticResource Props}, XPath=ViewStackSource}">
@@ -479,17 +481,17 @@
             </ItemsControl>
          </TabItem>
       </TabControl>
-      <xctk:Zoombox x:Name="zoombox"
+      <zoombox:Zoombox x:Name="zoombox"
                     ViewStackIndex="0"
                     Grid.Column="1"
                     Margin="20"
                     Focusable="True"
                     IsTabStop="True">
-         <xctk:Zoombox.ViewStack>
-            <xctk:ZoomboxView>Fit</xctk:ZoomboxView>
-         </xctk:Zoombox.ViewStack>
+         <zoombox:Zoombox.ViewStack>
+            <zoombox:ZoomboxView>Fit</zoombox:ZoomboxView>
+         </zoombox:Zoombox.ViewStack>
          <Image Source="../Resources/Default.jpg" />
 
-      </xctk:Zoombox>
+      </zoombox:Zoombox>
    </Grid>
 </local:DemoView>

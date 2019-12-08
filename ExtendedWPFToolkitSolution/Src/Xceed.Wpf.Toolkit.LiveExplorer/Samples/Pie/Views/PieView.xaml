@@ -18,6 +18,8 @@
                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                  xmlns:local="clr-namespace:Xceed.Wpf.Toolkit.LiveExplorer"
                  xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+                 xmlns:converters="clr-namespace:Xceed.Wpf.Toolkit.Core.Converters;assembly=Xceed.Wpf.Toolkit"
+                 xmlns:toolkit="clr-namespace:Xceed.Wpf.Toolkit;assembly=Xceed.Wpf.Toolkit"
                  Title="Pie"
                  x:Name="demo">
     <local:DemoView.Description>
@@ -27,7 +29,7 @@
     </local:DemoView.Description>
 
    <local:DemoView.Resources>
-      <xctk:ColorToSolidColorBrushConverter x:Key="colorConverter" />
+      <converters:ColorToSolidColorBrushConverter x:Key="colorConverter" />
    </local:DemoView.Resources>
 
    <Grid HorizontalAlignment="Stretch"
@@ -77,9 +79,9 @@
                     Margin="10,5,10,5"
                     SelectedItem="{Binding Mode}"
                     SelectionChanged="ComboBox_SelectionChanged">
-               <x:StaticExtension Member="xctk:PieMode.Manual" />
-               <x:StaticExtension Member="xctk:PieMode.EndAngle" />
-               <x:StaticExtension Member="xctk:PieMode.Slice" />
+               <x:StaticExtension Member="toolkit:PieMode.Manual" />
+               <x:StaticExtension Member="toolkit:PieMode.EndAngle" />
+               <x:StaticExtension Member="toolkit:PieMode.Slice" />
             </ComboBox>
 
             <TextBlock Grid.Row="1"
@@ -187,7 +189,7 @@
                     Text="Fill Color"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Center" />
-            <xctk:ColorPicker x:Name="FillSelector"
+            <toolkit:ColorPicker x:Name="FillSelector"
                     Grid.Row="5"
                     Grid.Column="1"
                     Grid.ColumnSpan="1"
@@ -202,7 +204,7 @@
                     Text="Stroke Color"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Center" />
-            <xctk:ColorPicker  x:Name="StrokeSelector"
+            <toolkit:ColorPicker  x:Name="StrokeSelector"
                     Grid.Row="6"
                     Grid.Column="1"
                     Grid.ColumnSpan="1"
@@ -213,7 +215,7 @@
                     Width="Auto" />            
          </Grid>
       </GroupBox>
-      <xctk:Pie x:Name="pie"
+      <toolkit:Pie x:Name="pie"
                 Grid.Column="1"
                 Height="{Binding ElementName=pie, Path=ActualWidth}"
                 Fill="{Binding ElementName=FillSelector, Path=SelectedColor, Mode=OneWay, Converter={StaticResource colorConverter}}"

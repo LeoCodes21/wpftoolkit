@@ -20,6 +20,7 @@
                  xmlns:sys="clr-namespace:System;assembly=mscorlib"
                  xmlns:local="clr-namespace:Xceed.Wpf.Toolkit.LiveExplorer"
                  xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+                 xmlns:toolkit="clr-namespace:Xceed.Wpf.Toolkit;assembly=Xceed.Wpf.Toolkit"
                  Title="MultiLineTextEditor">
     <local:DemoView.Description>
         <Paragraph FontSize="14" FontFamily="Segoe">
@@ -29,7 +30,7 @@
 
     <local:DemoView.Resources>
         <DataTemplate x:Key="multiLineTextEditorStyle" >
-            <xctk:MultiLineTextEditor
+            <toolkit:MultiLineTextEditor
                TextWrapping="Wrap" 
                Text="{Binding Path=Review}" 
                Content="{Binding Text, RelativeSource={RelativeSource Self}}" 

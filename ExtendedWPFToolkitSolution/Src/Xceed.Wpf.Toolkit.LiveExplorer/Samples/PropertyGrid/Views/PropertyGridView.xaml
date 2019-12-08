@@ -19,6 +19,8 @@
                 xmlns:local="clr-namespace:Xceed.Wpf.Toolkit.LiveExplorer"
                 xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
                 xmlns:s="clr-namespace:System;assembly=mscorlib"
+                xmlns:toolkit="clr-namespace:Xceed.Wpf.Toolkit;assembly=Xceed.Wpf.Toolkit"
+                xmlns:propertyGrid="clr-namespace:Xceed.Wpf.Toolkit.PropertyGrid;assembly=Xceed.Wpf.Toolkit"
                 VerticalScrollBarVisibility="Disabled"
                 Title="PropertyGrid">
   <local:DemoView.Description>
@@ -68,7 +70,7 @@
         <TextBlock Text="Filter:"
                    VerticalAlignment="Center"
                    Grid.Row="1" />
-        <xctk:WatermarkTextBox Grid.Row="1"
+        <toolkit:WatermarkTextBox Grid.Row="1"
                                Grid.Column="1"
                                Width="175"
                                Watermark="Search"
@@ -178,7 +180,7 @@
                    Grid.Row="3"
                    Grid.Column="4"
                    Margin="10,0,0,0" />
-        <xctk:DoubleUpDown Grid.Row="3"
+        <toolkit:DoubleUpDown Grid.Row="3"
                            Grid.Column="5"
                            Value="{Binding PropertyNameLeftPadding, ElementName=_propertyGrid}"
                            Minimum="0"
@@ -210,7 +212,7 @@
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center">Button</Button>
 
-        <xctk:PropertyGrid Grid.Column="1"
+        <propertyGrid:PropertyGrid Grid.Column="1"
                            x:Name="_propertyGrid"
                            ShowSummary="True"
                            Filter=""
@@ -225,7 +227,7 @@
                            ShowHorizontalScrollBar="False"
                            PropertyNameLeftPadding="15"
                            SelectedObject="{Binding ElementName=_button}">
-        </xctk:PropertyGrid>
+        </propertyGrid:PropertyGrid>
       </Grid>
     </DockPanel>
   </Grid>

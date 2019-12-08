@@ -19,6 +19,7 @@
                 xmlns:local="clr-namespace:Xceed.Wpf.Toolkit.LiveExplorer"
                 xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
                 xmlns:s="clr-namespace:System;assembly=mscorlib"
+                xmlns:propertyGrid="clr-namespace:Xceed.Wpf.Toolkit.PropertyGrid;assembly=Xceed.Wpf.Toolkit"
                 VerticalScrollBarVisibility="Disabled"
                 Title="Using SelectedObject(s)">
     <local:DemoView.Description>
@@ -53,7 +54,7 @@
          </StackPanel>
             <!-- The SelectedObject property will be assigned in code-behind when one
          of the 3 controls receives focus. -->
-         <xctk:PropertyGrid x:Name="_propertyGrid" 
+         <propertyGrid:PropertyGrid x:Name="_propertyGrid" 
                             Grid.Column="1" 
                             HorizontalAlignment="Stretch"
                             IsVirtualizing="True"/>

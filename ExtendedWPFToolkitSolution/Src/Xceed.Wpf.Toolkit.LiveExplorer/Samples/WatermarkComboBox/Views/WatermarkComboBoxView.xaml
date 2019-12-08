@@ -19,6 +19,7 @@
                 xmlns:sys="clr-namespace:System;assembly=mscorlib"
                 xmlns:local="clr-namespace:Xceed.Wpf.Toolkit.LiveExplorer"
                 xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+                xmlns:toolkit="clr-namespace:Xceed.Wpf.Toolkit;assembly=Xceed.Wpf.Toolkit"
                 Title="WatermarkComboBox">
 
    <local:DemoView.Description>
@@ -109,7 +110,7 @@
                     Margin="10"
                     Style="{StaticResource Header}" />
 
-         <xctk:WatermarkComboBox x:Name="_watermarkComboBox"
+         <toolkit:WatermarkComboBox x:Name="_watermarkComboBox"
                                  Margin="10"
                                  Width="350"
                                  IsEditable="True"
@@ -121,7 +122,7 @@
             <ComboBoxItem Content="Blue" />
             <ComboBoxItem Content="Yellow" />
             <ComboBoxItem Content="Black" />
-         </xctk:WatermarkComboBox>
+         </toolkit:WatermarkComboBox>
 
       </StackPanel>
    </Grid>

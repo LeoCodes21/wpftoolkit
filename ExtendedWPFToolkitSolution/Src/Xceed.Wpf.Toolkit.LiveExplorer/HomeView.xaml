@@ -18,9 +18,10 @@
                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                  xmlns:local="clr-namespace:Xceed.Wpf.Toolkit.LiveExplorer"
                  xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+                 xmlns:toolkit="clr-namespace:Xceed.Wpf.Toolkit;assembly=Xceed.Wpf.Toolkit"
                  Title="What's new">
    <Grid>
-      <xctk:RichTextBox
+      <toolkit:RichTextBox
             BorderThickness="0"
             IsReadOnly="True" 
             IsHitTestVisible="False" 
@@ -30,6 +31,6 @@
                What's new
             </Paragraph>
          </FlowDocument>
-      </xctk:RichTextBox>
+      </toolkit:RichTextBox>
    </Grid>
 </local:DemoView>

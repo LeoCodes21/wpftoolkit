@@ -19,41 +19,42 @@
                  xmlns:local="clr-namespace:Xceed.Wpf.Toolkit.LiveExplorer"
                  xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
                  xmlns:s="clr-namespace:System;assembly=mscorlib"
+                 xmlns:propertyGrid="clr-namespace:Xceed.Wpf.Toolkit.PropertyGrid;assembly=Xceed.Wpf.Toolkit"
                  VerticalScrollBarVisibility="Disabled"
                  Title="PropertyGrid Specifying Properties">
     <local:DemoView.Description>
         <Paragraph FontSize="14" FontFamily="Segoe">
-           By default the propertyGrid will autogenerate all the properties for a given object.  You can override this behavior by setting the AutoGenerateProperties property to False, and then provide a collection of PropertyDefinitions of the properties you would like to show.
+            By default the propertyGrid will autogenerate all the properties for a given object.  You can override this behavior by setting the AutoGenerateProperties property to False, and then provide a collection of PropertyDefinitions of the properties you would like to show.
         </Paragraph>
     </local:DemoView.Description>
 
-   <Grid>      
-      <xctk:PropertyGrid x:Name="_propertyGrid"
+    <Grid>
+        <propertyGrid:PropertyGrid x:Name="_propertyGrid"
                          Width="450" 
                          MaxHeight="245"
                          Margin="10"
                          AutoGenerateProperties="False">
 
-         <xctk:PropertyGrid.PropertyDefinitions>
-            <!-- The following properties will be displayed in the PropertyGrid 
+            <propertyGrid:PropertyGrid.PropertyDefinitions>
+                <!-- The following properties will be displayed in the PropertyGrid 
                  Some properties' data will be overriden-->
-            <xctk:PropertyDefinition TargetProperties="FirstName,PetNames" DisplayOrder="0"/>
-            <xctk:PropertyDefinition TargetProperties="FavoriteColor"
+                <propertyGrid:PropertyDefinition TargetProperties="FirstName,PetNames" DisplayOrder="0"/>
+                <propertyGrid:PropertyDefinition TargetProperties="FavoriteColor"
                                      DisplayName="Shirt Color"
                                      Category="Clothes"
                                      Description="The color of the Person's shirt can be changed with the ColorPicker."
                                      IsExpandable="True">
-               <!--The following properties will be displayed in the "Shirt Color" expandable PropertyItem--> 
-               <xctk:PropertyDefinition.PropertyDefinitions>
-                  <xctk:PropertyDefinition TargetProperties="R,G,B"/>
-               </xctk:PropertyDefinition.PropertyDefinitions>
-            </xctk:PropertyDefinition>
-            <!-- And all properties of type Boolean will be displayed in the PropertyGrid-->
-            <xctk:PropertyDefinition TargetProperties="{x:Type s:Boolean}" DisplayOrder="1"/>
+                    <!--The following properties will be displayed in the "Shirt Color" expandable PropertyItem-->
+                    <propertyGrid:PropertyDefinition.PropertyDefinitions>
+                        <propertyGrid:PropertyDefinition TargetProperties="R,G,B"/>
+                    </propertyGrid:PropertyDefinition.PropertyDefinitions>
+                </propertyGrid:PropertyDefinition>
+                <!-- And all properties of type Boolean will be displayed in the PropertyGrid-->
+                <propertyGrid:PropertyDefinition TargetProperties="{x:Type s:Boolean}" DisplayOrder="1"/>
 
-            <!-- This Property won't be displayed -->
-             <xctk:PropertyDefinition TargetProperties="WritingHand" IsBrowsable="False"/>
-         </xctk:PropertyGrid.PropertyDefinitions>
-      </xctk:PropertyGrid>
-   </Grid>
+                <!-- This Property won't be displayed -->
+                <propertyGrid:PropertyDefinition TargetProperties="WritingHand" IsBrowsable="False"/>
+            </propertyGrid:PropertyGrid.PropertyDefinitions>
+        </propertyGrid:PropertyGrid>
+    </Grid>
 </local:DemoView>

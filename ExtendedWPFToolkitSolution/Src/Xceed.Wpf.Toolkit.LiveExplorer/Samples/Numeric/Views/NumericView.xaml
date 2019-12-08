@@ -20,6 +20,9 @@
                 xmlns:numeric="clr-namespace:Xceed.Wpf.Toolkit.LiveExplorer.Samples.Numeric.Views"
                 xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
                 xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                xmlns:converters="clr-namespace:Xceed.Wpf.Toolkit.Core.Converters;assembly=Xceed.Wpf.Toolkit"
+                xmlns:toolkit="clr-namespace:Xceed.Wpf.Toolkit;assembly=Xceed.Wpf.Toolkit"
+                xmlns:primitives="clr-namespace:Xceed.Wpf.Toolkit.Primitives;assembly=Xceed.Wpf.Toolkit"
                 Title="Numeric"
                 x:Name="_demo">
   <local:DemoView.Description>
@@ -54,7 +57,7 @@
                             DisplayValue="Degrees" />
     </x:Array>
 
-    <xctk:InverseBoolConverter x:Key="InverseBoolConverter" />
+    <converters:InverseBoolConverter x:Key="InverseBoolConverter" />
 
     <DataTemplate x:Key="FormatStringItemTemplate">
       <TextBlock Text="{Binding DisplayValue}" />
@@ -64,7 +67,7 @@
                         MethodName="GetValues"
                         ObjectType="{x:Type sys:Enum}">
       <ObjectDataProvider.MethodParameters>
-        <x:Type TypeName="xctk:AllowedSpecialValues" />
+        <x:Type TypeName="toolkit:AllowedSpecialValues" />
       </ObjectDataProvider.MethodParameters>
     </ObjectDataProvider>
 
@@ -72,7 +75,7 @@
                         MethodName="GetValues"
                         ObjectType="{x:Type sys:Enum}">
       <ObjectDataProvider.MethodParameters>
-        <x:Type TypeName="xctk:Location" />
+        <x:Type TypeName="toolkit:Location" />
       </ObjectDataProvider.MethodParameters>
     </ObjectDataProvider>
 
@@ -145,10 +148,10 @@
                     SelectedItem="{Binding MouseWheelActiveTrigger, ElementName=_doubleUpDown}"
                     Margin="5"
                     VerticalAlignment="Center">
-            <x:StaticExtension Member="xctk:MouseWheelActiveTrigger.Focused" />
-            <x:StaticExtension Member="xctk:MouseWheelActiveTrigger.FocusedMouseOver" />
-            <x:StaticExtension Member="xctk:MouseWheelActiveTrigger.MouseOver" />
-            <x:StaticExtension Member="xctk:MouseWheelActiveTrigger.Disabled" />
+            <x:StaticExtension Member="primitives:MouseWheelActiveTrigger.Focused" />
+            <x:StaticExtension Member="primitives:MouseWheelActiveTrigger.FocusedMouseOver" />
+            <x:StaticExtension Member="primitives:MouseWheelActiveTrigger.MouseOver" />
+            <x:StaticExtension Member="primitives:MouseWheelActiveTrigger.Disabled" />
           </ComboBox>
 
           <TextBlock Text="Show Button Spinner:"
@@ -246,7 +249,7 @@
                      Text="Increment"
                      VerticalAlignment="Center"
                      Margin="10,0,0,0" />
-          <xctk:DoubleUpDown Grid.Column="3"
+          <toolkit:DoubleUpDown Grid.Column="3"
                              Grid.Row="2"
                              Minimum="0"
                              Value="{Binding Increment, ElementName=_doubleUpDown}"
@@ -260,7 +263,7 @@
                      Text="Minimum"
                      VerticalAlignment="Center"
                      Margin="10,0,0,0" />
-          <xctk:DoubleUpDown Grid.Column="3"
+          <toolkit:DoubleUpDown Grid.Column="3"
                              Grid.Row="3"
                              Value="{Binding Minimum, ElementName=_doubleUpDown}"
                              AllowInputSpecialValues="NegativeInfinity"
@@ -273,7 +276,7 @@
                      Text="Maximum"
                      VerticalAlignment="Center"
                      Margin="10,0,0,0" />
-          <xctk:DoubleUpDown Grid.Column="3"
+          <toolkit:DoubleUpDown Grid.Column="3"
                              Grid.Row="4"
                              Value="{Binding Maximum, ElementName=_doubleUpDown}"
                              AllowInputSpecialValues="PositiveInfinity"
@@ -286,7 +289,7 @@
                      Text="MaxLength"
                      VerticalAlignment="Center"
                      Margin="10,0,0,0" />
-          <xctk:IntegerUpDown Grid.Column="3"
+          <toolkit:IntegerUpDown Grid.Column="3"
                               Grid.Row="5"
                               Minimum="0"
                               MaxLength="10"
@@ -335,7 +338,7 @@
                      Grid.Row="3"
                      VerticalAlignment="Center"
                      Margin="10,0,0,0" />
-          <xctk:DoubleUpDown Grid.Column="5"
+          <toolkit:DoubleUpDown Grid.Column="5"
                              Grid.Row="3"
                              Value="{Binding DefaultValue, ElementName=_doubleUpDown}"
                              AllowInputSpecialValues="Any"
@@ -348,7 +351,7 @@
                      Grid.Row="4"
                      VerticalAlignment="Center"
                      Margin="10,0,0,0" />
-          <xctk:DoubleUpDown Grid.Column="5"
+          <toolkit:DoubleUpDown Grid.Column="5"
                              Grid.Row="4"
                              Value="{Binding Value, ElementName=_doubleUpDown, ValidatesOnExceptions=True}"
                              AllowInputSpecialValues="Any"
@@ -396,7 +399,7 @@
                   HorizontalAlignment="Left">
         <TextBlock Text="DoubleUpDown Usage:"
                    Style="{StaticResource Header}" />
-        <xctk:DoubleUpDown x:Name="_doubleUpDown"
+        <toolkit:DoubleUpDown x:Name="_doubleUpDown"
                            Margin="10"
                            Width="250"
                            AllowInputSpecialValues="Any"
@@ -440,7 +443,7 @@
           <TextBlock Text="Precision(decimal places): "
                      Margin="70,0,0,0"
                      VerticalAlignment="Center" />
-          <xctk:IntegerUpDown Width="75"
+          <toolkit:IntegerUpDown Width="75"
                               HorizontalAlignment="Left"
                               VerticalAlignment="Center"
                               Margin="5"
@@ -456,7 +459,7 @@
                   HorizontalAlignment="Left">
         <TextBlock Text="CalculatorUpDown Usage:"
                    Style="{StaticResource Header}" />
-        <xctk:CalculatorUpDown x:Name="_calculatorUpDown"
+        <toolkit:CalculatorUpDown x:Name="_calculatorUpDown"
                                Margin="10"
                                Width="250"
                                Precision="2"

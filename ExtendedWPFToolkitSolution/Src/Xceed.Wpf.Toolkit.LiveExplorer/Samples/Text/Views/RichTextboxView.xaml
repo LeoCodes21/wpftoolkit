@@ -21,6 +21,7 @@
                  xmlns:local="clr-namespace:Xceed.Wpf.Toolkit.LiveExplorer"
                  xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
                  xmlns:rich="clr-namespace:Xceed.Wpf.Toolkit.LiveExplorer.Samples.Text.Views"
+                 xmlns:toolkit="clr-namespace:Xceed.Wpf.Toolkit;assembly=Xceed.Wpf.Toolkit"
                  Title="RichTextBox">
     <local:DemoView.Description>
         <Paragraph FontSize="14" FontFamily="Segoe">
@@ -58,16 +59,16 @@
 
         <StackPanel Grid.Row="1" Margin="10">
             <TextBlock Text="Usage:" Style="{StaticResource Header}" />
-            <xctk:RichTextBox x:Name="_richTextBox" Grid.Column="1" Margin="5" BorderBrush="Gray" Padding="10" Width="350" >
-               <xctk:RichTextBoxFormatBarManager.FormatBar>
-                    <xctk:RichTextBoxFormatBar />
-                </xctk:RichTextBoxFormatBarManager.FormatBar>
-            <xctk:RichTextBox.Document>
+            <toolkit:RichTextBox x:Name="_richTextBox" Grid.Column="1" Margin="5" BorderBrush="Gray" Padding="10" Width="350" >
+               <toolkit:RichTextBoxFormatBarManager.FormatBar>
+                    <toolkit:RichTextBoxFormatBar />
+                </toolkit:RichTextBoxFormatBarManager.FormatBar>
+            <toolkit:RichTextBox.Document>
                <FlowDocument>
                   <Paragraph>This is the <Bold>RichTextBox </Bold>!</Paragraph>
                </FlowDocument>
-            </xctk:RichTextBox.Document>
-         </xctk:RichTextBox>
+            </toolkit:RichTextBox.Document>
+         </toolkit:RichTextBox>
         </StackPanel>
     </Grid>
 </local:DemoView>
